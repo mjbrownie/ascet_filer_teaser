@@ -21,7 +21,7 @@ class FilerTeaserPlugin(CMSPluginBase):
     module = 'Filer'
     model = models.FilerTeaser
     name = _("FilerTeaser")
-    render_template = "cmsplugin_filer_teaser/teaser.html"
+    render_template = "ascet_filer_teaser/teaser.html"
 
     def _get_thumbnail_options(self, context, instance):
         """

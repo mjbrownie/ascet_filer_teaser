@@ -1,7 +1,7 @@
 
 from south.db import db
 from django.db import models
-from cmsplugin_filer_teaser.models import *
+from ascet_filer_teaser.models import *
 
 class Migration:
 
@@ -13,17 +13,17 @@ class Migration:
         
         # Adding model 'FilerTeaser'
         db.create_table('cmsplugin_filerteaser', (
-            ('cmsplugin_ptr', orm['cmsplugin_filer_teaser.FilerTeaser:cmsplugin_ptr']),
-            ('title', orm['cmsplugin_filer_teaser.FilerTeaser:title']),
-            ('image', orm['cmsplugin_filer_teaser.FilerTeaser:image']),
-            ('use_autoscale', orm['cmsplugin_filer_teaser.FilerTeaser:use_autoscale']),
-            ('width', orm['cmsplugin_filer_teaser.FilerTeaser:width']),
-            ('height', orm['cmsplugin_filer_teaser.FilerTeaser:height']),
-            ('free_link', orm['cmsplugin_filer_teaser.FilerTeaser:free_link']),
-            ('page_link', orm['cmsplugin_filer_teaser.FilerTeaser:page_link']),
-            ('description', orm['cmsplugin_filer_teaser.FilerTeaser:description']),
+            ('cmsplugin_ptr', orm['ascet_filer_teaser.FilerTeaser:cmsplugin_ptr']),
+            ('title', orm['ascet_filer_teaser.FilerTeaser:title']),
+            ('image', orm['ascet_filer_teaser.FilerTeaser:image']),
+            ('use_autoscale', orm['ascet_filer_teaser.FilerTeaser:use_autoscale']),
+            ('width', orm['ascet_filer_teaser.FilerTeaser:width']),
+            ('height', orm['ascet_filer_teaser.FilerTeaser:height']),
+            ('free_link', orm['ascet_filer_teaser.FilerTeaser:free_link']),
+            ('page_link', orm['ascet_filer_teaser.FilerTeaser:page_link']),
+            ('description', orm['ascet_filer_teaser.FilerTeaser:description']),
         ))
-        db.send_create_signal('cmsplugin_filer_teaser', ['FilerTeaser'])
+        db.send_create_signal('ascet_filer_teaser', ['FilerTeaser'])
         
     
     
@@ -105,7 +105,7 @@ class Migration:
             'template': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
             'tree_id': ('django.db.models.fields.PositiveIntegerField', [], {'db_index': 'True'})
         },
-        'cmsplugin_filer_teaser.filerteaser': {
+        'ascet_filer_teaser.filerteaser': {
             'Meta': {'db_table': "'cmsplugin_filerteaser'"},
             'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
@@ -171,4 +171,4 @@ class Migration:
         }
     }
     
-    complete_apps = ['cmsplugin_filer_teaser']
+    complete_apps = ['ascet_filer_teaser']

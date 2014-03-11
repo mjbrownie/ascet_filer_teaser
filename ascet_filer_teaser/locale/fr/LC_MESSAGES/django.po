@@ -81,6 +81,6 @@ msgstr "ouvrir le lien dans une nouvelle fenêtre"
 msgid "Either an image or an image url must be selected."
 msgstr "Une image ou bien une adresse d'image doit être sélectionnée."
 
-#: templates/cmsplugin_filer_teaser/teaser.html:17
+#: templates/ascet_filer_teaser/teaser.html:17
 msgid "more"
 msgstr "voir plus"

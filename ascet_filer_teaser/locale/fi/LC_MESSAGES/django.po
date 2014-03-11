@@ -80,6 +80,6 @@ msgstr "avaa linkki uuteen ikkunaan"
 msgid "Either an image or an image url must be selected."
 msgstr "Joko kuva tai kuvan URL on valittava."
 
-#: templates/cmsplugin_filer_teaser/teaser.html:17
+#: templates/ascet_filer_teaser/teaser.html:17
 msgid "more"
 msgstr "lisää"

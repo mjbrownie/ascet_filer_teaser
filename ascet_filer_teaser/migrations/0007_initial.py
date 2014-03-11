@@ -23,7 +23,7 @@ class Migration(SchemaMigration):
             ('description', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('target_blank', self.gf('django.db.models.fields.BooleanField')(default=False)),
         ))
-        db.send_create_signal(u'cmsplugin_filer_teaser', ['FilerTeaser'])
+        db.send_create_signal(u'ascet_filer_teaser', ['FilerTeaser'])
 
 
     def backwards(self, orm):
@@ -113,7 +113,7 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
         },
-        u'cmsplugin_filer_teaser.filerteaser': {
+        u'ascet_filer_teaser.filerteaser': {
             'Meta': {'object_name': 'FilerTeaser', 'db_table': "u'cmsplugin_filerteaser'", '_ormbases': ['cms.CMSPlugin']},
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
@@ -187,4 +187,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['cmsplugin_filer_teaser']
+    complete_apps = ['ascet_filer_teaser']

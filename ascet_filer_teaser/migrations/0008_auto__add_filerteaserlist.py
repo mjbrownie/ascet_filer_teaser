@@ -15,14 +15,14 @@ class Migration(SchemaMigration):
             ('description', self.gf('django.db.models.fields.TextField')(null=True, blank=True)),
             ('template', self.gf('django.db.models.fields.CharField')(max_length=255)),
         ))
-        db.send_create_signal(u'cmsplugin_filer_teaser', ['FIlerTeaserList'])
+        db.send_create_signal(u'ascet_filer_teaser', ['FIlerTeaserList'])
 
         # Adding M2M table for field filer_teasers on 'FIlerTeaserList'
         m2m_table_name = db.shorten_name(u'cmsplugin_filerteaserlist_filer_teasers')
         db.create_table(m2m_table_name, (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('filerteaserlist', models.ForeignKey(orm[u'cmsplugin_filer_teaser.filerteaserlist'], null=False)),
-            ('filerteaser', models.ForeignKey(orm[u'cmsplugin_filer_teaser.filerteaser'], null=False))
+            ('filerteaserlist', models.ForeignKey(orm[u'ascet_filer_teaser.filerteaserlist'], null=False)),
+            ('filerteaser', models.ForeignKey(orm[u'ascet_filer_teaser.filerteaser'], null=False))
         ))
         db.create_unique(m2m_table_name, ['filerteaserlist_id', 'filerteaser_id'])
 
@@ -117,7 +117,7 @@ class Migration(SchemaMigration):
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'slot': ('django.db.models.fields.CharField', [], {'max_length': '50', 'db_index': 'True'})
         },
-        u'cmsplugin_filer_teaser.filerteaser': {
+        u'ascet_filer_teaser.filerteaser': {
             'Meta': {'object_name': 'FilerTeaser', 'db_table': "u'cmsplugin_filerteaser'", '_ormbases': ['cms.CMSPlugin']},
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
@@ -132,11 +132,11 @@ class Migration(SchemaMigration):
             'use_autoscale': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
             'width': ('django.db.models.fields.PositiveIntegerField', [], {'null': 'True', 'blank': 'True'})
         },
-        u'cmsplugin_filer_teaser.filerteaserlist': {
+        u'ascet_filer_teaser.filerteaserlist': {
             'Meta': {'object_name': 'FIlerTeaserList', 'db_table': "u'cmsplugin_filerteaserlist'", '_ormbases': ['cms.CMSPlugin']},
             u'cmsplugin_ptr': ('django.db.models.fields.related.OneToOneField', [], {'to': "orm['cms.CMSPlugin']", 'unique': 'True', 'primary_key': 'True'}),
             'description': ('django.db.models.fields.TextField', [], {'null': 'True', 'blank': 'True'}),
-            'filer_teasers': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': u"orm['cmsplugin_filer_teaser.FilerTeaser']", 'null': 'True', 'blank': 'True'}),
+            'filer_teasers': ('django.db.models.fields.related.ManyToManyField', [], {'symmetrical': 'False', 'to': u"orm['ascet_filer_teaser.FilerTeaser']", 'null': 'True', 'blank': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '128'}),
             'template': ('django.db.models.fields.CharField', [], {'max_length': '255'})
         },
@@ -199,4 +199,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['cmsplugin_filer_teaser']
+    complete_apps = ['ascet_filer_teaser']
