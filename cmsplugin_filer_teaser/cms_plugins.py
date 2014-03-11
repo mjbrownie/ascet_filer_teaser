@@ -4,6 +4,8 @@ from django.utils.translation import ugettext_lazy as _
 import models
 from django.conf import settings
 
+from django.contrib import admin
+
 try:
     from settings import TEASER_PLUGIN_TEMPLATES
 except:
@@ -18,7 +20,7 @@ class FilerTeaserPlugin(CMSPluginBase):
     """
     module = 'Filer'
     model = models.FilerTeaser
-    name = _("Teaser")
+    name = _("FilerTeaser")
     render_template = "cmsplugin_filer_teaser/teaser.html"
 
     def _get_thumbnail_options(self, context, instance):
@@ -71,13 +73,20 @@ class FilerTeaserPlugin(CMSPluginBase):
         })
         return context
 
+
+class FilerTeaserItemInline(admin.StackedInline):
+
+    model = models.FilerTeaserItem
+
 class FilerTeaserListPlugin(CMSPluginBase):
 
     model = models.FilerTeaserList
     module = 'Filer'
-    name = _("TeaserList")
+    name = _("FilerTeaserList")
     render_template = TEASER_PLUGIN_TEMPLATES[0][0]
     filter_horizontal = ('filer_teasers',)
+
+    inlines = [FilerTeaserItemInline,]
 
     def render(self, context, instance, placeholder):
         if instance and instance.template:

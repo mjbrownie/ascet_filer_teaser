@@ -74,7 +74,7 @@ class FilerTeaserItem(models.Model):
     title = models.CharField(_("title"), max_length=255, blank=True)
     image = FilerImageField(blank=True, null=True, verbose_name=_("image"))
 
-    filer_teaser_list = models.ForeignKey("FilerTeaserList", relative_name='filer_teasers')
+    filer_teaser_list = models.ForeignKey("FilerTeaserList", related_name='filer_teasers')
 
     if LooseVersion(django.get_version()) < LooseVersion('1.5'):
         image_url = models.URLField(_("alternative image url"), null=True, blank=True, default=None)
