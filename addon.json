@@ -1,0 +1,14 @@
+{
+    "name": "Ascet Filer Teaser",
+    "description": "Ascet Filer Teaser. Features a Teaser List",
+    "version": "1.0",
+    "url": "http://ascetdigital.com",
+    "package-name": "ascet_filer_teaser",
+    "installed-apps": [
+        "cmsplugin_filer_teaser"
+    ],
+    "author": {
+        "name": "Michael Brown",
+        "url": "http://ascetdigital.com"
+    }
+}
