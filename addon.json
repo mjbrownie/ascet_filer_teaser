@@ -5,7 +5,7 @@
     "url": "http://ascetdigital.com",
     "package-name": "ascet_filer_teaser",
     "installed-apps": [
-        "cmsplugin_filer_teaser"
+        "ascet_filer_teaser"
     ],
     "author": {
         "name": "Michael Brown",
