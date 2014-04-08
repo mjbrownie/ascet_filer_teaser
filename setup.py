@@ -11,5 +11,8 @@ setup(name='ascet-filer-teaser',
            #   'templates/cms/*',
            #   'templates/cms_pageimage/*',
            #   ]},
+        install_requires=[
+           'django-filer==0.9.5',
+            ],
         zip_safe=False,
         )
