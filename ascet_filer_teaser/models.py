@@ -7,7 +7,7 @@ from filer.fields.image import FilerImageField
 from django.conf import settings
 from distutils.version import LooseVersion
 
-from cmsplugin_filer_utils import FilerPluginManager
+from ascet_filer_teaser.utils import FilerPluginManager
 
 CMSPLUGIN_FILER_TEASER_STYLE_CHOICES = getattr( settings, 'CMSPLUGIN_FILER_TEASER_STYLE_CHOICES',() )
 
