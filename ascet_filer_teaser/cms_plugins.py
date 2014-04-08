@@ -38,5 +38,4 @@ class FilerTeaserListPlugin(CMSPluginBase):
         })
         return context
 
-plugin_pool.register_plugin(FilerTeaserPlugin)
 plugin_pool.register_plugin(FilerTeaserListPlugin)
