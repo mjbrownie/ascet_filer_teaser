@@ -14,7 +14,7 @@ except:
             )
 
 
-class FilerTeaserItemInline(admin.StackedInline):
+class FilerTeaserItemInline(admin.TabularInline):
 
     model = models.FilerTeaserItem
 
