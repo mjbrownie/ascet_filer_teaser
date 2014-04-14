@@ -1,4 +1,7 @@
+{% comment  %}
 {% load i18n thumbnail %}
+{% endcomment %}
+{% load i18n %}
 {{object|pprint}}
 {% with object.id as tabid %}
 <div class="grid-24">
@@ -30,7 +33,10 @@
         {% if object.page_link %}
         <a href="{% firstof object.page_link.get_absolute_url object.url %}">
         {% endif %}
+          {% comment  %}
           <img src="{% thumbnail object.image.file 250x180 upscale="True" %}"  alt="{{ object.title }}"/>
+          {% endcomment %}
+          
         {% if object.page_link %}
         </a>
         {% endif %}
