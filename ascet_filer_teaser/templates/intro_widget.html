@@ -1,10 +1,50 @@
-<!DOCTYPE HTML>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	This template needs to be everridden
-</body>
-</html>
+{% comment  %}
+{% load i18n thumbnail %}
+{% endcomment %}
+{% load i18n %}
+{{object|pprint}}
+{% with object.id as tabid %}
+<div class="grid-24">
+  <div id="intro" class="grid-13 clearfix">
+    <div class="tabwidget">
+      <ul class="tabs">
+      {% for object in object.filer_teasers.all %}
+        <li>
+          <a href="#tab-{{tabid}}-{{ forloop.counter }}"  onclick="return false;">
+            &nbsp;
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      {% for object in object.filer_teasers.all %}
+      <div class="pannel" id="tab-{{tabid}}-{{ forloop.counter }}">
+
+        <h2>
+          {{ object.title|safe }}
+        </h2>
+
+        {% if object.description %}
+        <p>
+          {{ object.description|truncatechars:240 }}
+        </p>
+        {% endif %}
+        {% if object.image %}
+        {% if object.page_link %}
+        <a href="{% firstof object.page_link.get_absolute_url object.url %}">
+        {% endif %}
+          {% comment  %}
+          <img src="{% thumbnail object.image.file 250x180 upscale="True" %}"  alt="{{ object.title }}"/>
+          {% endcomment %}
+          
+        {% if object.page_link %}
+        </a>
+        {% endif %}
+        {% endif %}
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endwith %}
