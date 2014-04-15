@@ -10,7 +10,7 @@ try:
     from settings import TEASER_PLUGIN_TEMPLATES
 except:
     TEASER_PLUGIN_TEMPLATES = (
-            ('intro_wiget.html', 'Slider List'),
+            ('intro_widget.html', 'Slider List'),
             )
 
 

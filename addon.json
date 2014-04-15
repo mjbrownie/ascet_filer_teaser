@@ -1,7 +1,7 @@
 {
     "name": "Ascet Filer Teaser",
     "description": "Ascet Filer Teaser. Features a Teaser List",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "url": "http://ascetdigital.com",
     "package-name": "ascet_filer_teaser",
     "installed-apps": [
