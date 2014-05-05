@@ -12,7 +12,7 @@ from ascet_filer_teaser.utils import FilerPluginManager
 CMSPLUGIN_FILER_TEASER_STYLE_CHOICES = getattr( settings, 'CMSPLUGIN_FILER_TEASER_STYLE_CHOICES',() )
 
 try:
-    from settings import TEASER_PLUGIN_TEMPLATES
+    TEASER_PLUGIN_TEMPLATES = settings.TEASER_PLUGIN_TEMPLATES
 except:
     TEASER_PLUGIN_TEMPLATES = (
             ('intro_widget.html', 'Slider List'),
