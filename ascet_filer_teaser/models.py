@@ -127,7 +127,13 @@ class FilerTeaserList(CMSPlugin):
                                             choices = TEASER_PLUGIN_TEMPLATES)
 
     def copy_relations(self, oldinstance):
-            self.filer_teasers = oldinstance.filer_teasers.all()
+
+        for t in oldinstance.filer_teasers.all():
+            t.pk = None
+            t.filer_teaser_list = self
+            t.save()
+
+        #self.filer_teasers = oldinstance.filer_teasers.all()
 
     def __unicode__(self):
         return self.name
