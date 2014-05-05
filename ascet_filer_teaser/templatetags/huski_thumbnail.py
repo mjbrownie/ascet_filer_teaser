@@ -1,5 +1,5 @@
 import os
-import Image
+from PIL import Image
 from django.template import Library
 
 register = Library()

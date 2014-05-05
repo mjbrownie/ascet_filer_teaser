@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 setup(name='ascet-filer-teaser',
-        version='0.1',
+        version='0.1.1',
         description='filer-teaser',
         #long_description=readme,
         author="Michael Brown",
@@ -14,5 +14,5 @@ setup(name='ascet-filer-teaser',
         install_requires=[
            'django-filer==0.9.5',
             ],
-        zip_safe=False,
+        #zip_safe=False,
         )
