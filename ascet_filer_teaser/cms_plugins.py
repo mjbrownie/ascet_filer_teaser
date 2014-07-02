@@ -18,6 +18,7 @@ class FilerTeaserItemInline(admin.TabularInline):
 
     model = models.FilerTeaserItem
 
+    fields=['title','image','free_link','page_link','description']
 class FilerTeaserListPlugin(CMSPluginBase):
 
     model = models.FilerTeaserList
